@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AWS Security Analytics System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Advanced Analytics with Athena & AI-Powered Serverless Security</h1>
+        <p>AWS Security Analytics System</p>
+    </header>
+    
+    <div class="container">
+        <div class="card fade-in">
+            <h2>I. Overview</h2>
+            <p>Hệ thống phân tích log từ AWS WAF nhằm phát hiện tấn công web hiệu quả và tối ưu chi phí. Dữ liệu được lưu trên S3 và chuyển sang Parquet để giảm chi phí Athena.</p>
+            <ul>
+                <li>Layer 1: Athena lọc request nghi ngờ</li>
+                <li>Layer 2: AI (Bedrock) giảm false positive</li>
+                <li class="highlight">Event-driven + threshold-based → tiết kiệm chi phí</li>
+            </ul>
+        </div>
+
+        <div class="card fade-in">
+            <h2>II. Architecture</h2>
+            <ul>
+                <li>Edge & Security Layer</li>
+                <li>Processing & Cataloging Layer</li>
+                <li>Analysis & Reporting Layer</li>
+                <li>Report & Notification Layer</li>
+            </ul>
+            <p>
+                <span class="badge">Cost Optimization</span>
+                <span class="badge">High Accuracy</span>
+                <span class="badge">Serverless</span>
+            </p>
+        </div>
+
+        <div class="card fade-in">
+            <h2>III. Edge & Security Layer</h2>
+            <ul>
+                <li>CloudFront: phân phối nội dung</li>
+                <li>AWS WAF: bảo vệ (SQLi, XSS, rate limit)</li>
+                <li>Log lưu để phân tích</li>
+            </ul>
+        </div>
+
+        <div class="card fade-in">
+            <h2>IV. Processing & Cataloging</h2>
+            <h3>Storage</h3>
+            <ul>
+                <li>S3_rawlog (JSON)</li>
+                <li>S3_parquet (optimized)</li>
+            </ul>
+            <h3>Processing</h3>
+            <ul>
+                <li>Lambda: JSON → Parquet</li>
+                <li>Partition theo thời gian</li>
+            </ul>
+            <h3>Catalog</h3>
+            <ul>
+                <li>Glue Crawler → tạo schema</li>
+                <li>Glue Data Catalog → metadata</li>
+            </ul>
+            <h3>Query</h3>
+            <ul>
+                <li>Athena → filter request nghi ngờ</li>
+            </ul>
+        </div>
+
+        <div class="card fade-in">
+            <h2>V. Event-driven Query</h2>
+            <ul>
+                <li>Trigger từ S3 hoặc Lambda</li>
+                <li>Lambda gửi query Athena</li>
+            </ul>
+        </div>
+
+        <div class="card fade-in">
+            <h2>VI. Analysis & Reporting</h2>
+            <h3>Preprocessing</h3>
+            <ul>
+                <li>Chuẩn hóa dữ liệu</li>
+                <li>Aggregate (IP, pattern...)</li>
+            </ul>
+            <h3>AI Invocation</h3>
+            <ul>
+                <li>Chỉ gọi AI khi vượt threshold</li>
+            </ul>
+            <h3>AI Analysis</h3>
+            <ul>
+                <li>True attack / False positive</li>
+                <li>Risk level + explanation</li>
+            </ul>
+            <h3>Decision</h3>
+            <ul>
+                <li>Alert / Save / Ignore</li>
+                <li>Lưu vào S3_AI_Report</li>
+            </ul>
+        </div>
+
+        <div class="card fade-in">
+            <h2>VII. Notification</h2>
+            <ul>
+                <li>Lambda tổng hợp report</li>
+                <li>SNS gửi alert</li>
+            </ul>
+        </div>
+
+        <div class="card fade-in">
+            <h2>VIII. Benefits</h2>
+            <ul>
+                <li><span class="highlight">Chi phí thấp</span> (Athena + Parquet)</li>
+                <li><span class="highlight">Hiệu năng cao</span></li>
+                <li><span class="highlight">Độ chính xác cao</span></li>
+                <li><span class="highlight">Serverless</span></li>
+            </ul>
+        </div>
+
+        <div class="card fade-in">
+            <h2>IX. Cleanup</h2>
+            <ul>
+                <li>Xóa Glue, Lambda, SNS, IAM</li>
+                <li>Xóa S3 bucket</li>
+                <li>Xóa Athena query & database</li>
+            </ul>
+        </div>
+
+        <div class="card fade-in stats-card">
+            <h2>X. Estimation</h2>
+            <p class="stat-item">⏱ Time: <span class="stat-value">6 - 8 hours</span></p>
+            <p class="stat-item">💲 Cost: <span class="stat-value">3$ - 8$</span></p>
+        </div>
+
+        <div class="card fade-in conclusion-card">
+            <h2>XI. Conclusion</h2>
+            <p>Giải pháp serverless kết hợp AI giúp tăng hiệu quả, giảm chi phí và mở rộng tốt. Phù hợp cho hệ thống bảo mật web hiện đại trên cloud.</p>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 AWS Security Analytics Project
+    </footer>
+</body>
+</html>

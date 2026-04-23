@@ -1,0 +1,276 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #e2e8f0;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: pulse 15s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.2em;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+/* Container */
+.container {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Typography */
+h2 {
+    color: #38bdf8;
+    border-bottom: 3px solid #334155;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-size: 1.6em;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #38bdf8, #7c3aed);
+    border-radius: 2px;
+}
+
+h3 {
+    color: #a78bfa;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-size: 1.2em;
+}
+
+/* Card Styles */
+.card {
+    background: linear-gradient(145deg, #1e293b, #1a2332);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    border: 1px solid rgba(56, 189, 248, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(37, 99, 235, 0.3);
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+/* Fade-in Animation */
+.fade-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.fade-in:nth-child(1) { animation-delay: 0.1s; }
+.fade-in:nth-child(2) { animation-delay: 0.2s; }
+.fade-in:nth-child(3) { animation-delay: 0.3s; }
+.fade-in:nth-child(4) { animation-delay: 0.4s; }
+.fade-in:nth-child(5) { animation-delay: 0.5s; }
+.fade-in:nth-child(6) { animation-delay: 0.6s; }
+.fade-in:nth-child(7) { animation-delay: 0.7s; }
+.fade-in:nth-child(8) { animation-delay: 0.8s; }
+.fade-in:nth-child(9) { animation-delay: 0.9s; }
+.fade-in:nth-child(10) { animation-delay: 1s; }
+.fade-in:nth-child(11) { animation-delay: 1.1s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* List Styles */
+ul {
+    padding-left: 25px;
+    margin: 10px 0;
+}
+
+li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 5px;
+}
+
+li::marker {
+    color: #38bdf8;
+}
+
+/* Highlight */
+.highlight {
+    color: #22c55e;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+}
+
+/* Badge Styles */
+.badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #334155, #475569);
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin: 5px;
+    font-size: 0.9em;
+    font-weight: 600;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.badge:hover {
+    background: linear-gradient(135deg, #475569, #334155);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+
+/* Stats Card */
+.stats-card {
+    background: linear-gradient(135deg, #1e293b, #312e81);
+    border-color: rgba(167, 139, 250, 0.3);
+}
+
+.stat-item {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.stat-value {
+    color: #fbbf24;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Conclusion Card */
+.conclusion-card {
+    background: linear-gradient(135deg, #1e293b, #064e3b);
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background: #020617;
+    font-size: 14px;
+    border-top: 2px solid #334155;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.6em;
+    }
+    
+    .container {
+        padding: 20px 15px;
+    }
+    
+    .card {
+        padding: 20px;
+        margin: 15px 0;
+    }
+    
+    h2 {
+        font-size: 1.3em;
+    }
+    
+    .badge {
+        padding: 6px 12px;
+        font-size: 0.85em;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #2563eb, #7c3aed);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+}
